@@ -16,12 +16,13 @@ jobs:
     # - name: Build the Docker image
     #   run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
 
+    # mcr.microsoft.com/azure-app-service/windows/parkingpage:latest
     - uses: mr-smithers-excellent/docker-build-push@v6
       name: Build & push Docker image
       with:
         image: isaru66/aspnetmvcapp
         tags: latest
-        registry: registry.hub.docker.com
+        registry: docker.io
         dockerfile: Dockerfile
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
